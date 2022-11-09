@@ -1,0 +1,28 @@
+import marplotlib as plt
+
+year = [1950, 1970, 1990, 2010]
+pop = [2.5, 3.6, 5.2, 6.9]
+
+plt.plot(year, pop)
+
+plt.xlabel('Year')
+plt.ylabel('Population')
+plt.title('World Population Projections')
+plt.yticks([0,2,4,6,8,10]) # set the y-axis label
+# plt.xticks(tick_val,tick_lab)
+
+plt.show()
+
+# scatter plot
+plt.scatter(year, pop, alpha=0.8, c=col) 
+# Change the opacity of the bubbles by setting the alpha argument to 0.8 inside plt.scatter(). 
+# Alpha can be set from zero to one, where zero is totally transparent, and one is not at all transparent.
+
+plt.xscale('log') # use log transformation for normalization
+plt.grid(True) # add gridlines
+plt.text() # add text
+plt.show()
+
+# histogram
+plt.hist(x, bins, range, density)
+plt.show()
