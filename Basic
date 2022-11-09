@@ -1,0 +1,41 @@
+### python basic command, functions
+type()
+len()
+str()
+float()
+int()
+round()
+max()
+reverse()
+
+### Example 1
+sister = 'liz' # This is a string
+fam = ['mom', 1.71, 'liz', 1.73, 'dad', 1.89] #This is a list
+
+type(fam)
+List
+
+sister.capitalize()
+'Liz'
+
+sister.replace('z','sa') # replace z with sa
+'lisa'
+
+sister.index('z') 
+2
+
+fam.index('mom')
+0
+
+fam.append('me')
+['mom', 1.71, 'liz', 1.73, 'dad', 1.89, 'me']
+
+fam.append(1.79)
+['mom', 1.71, 'liz', 1.73, 'dad', 1.89, 'me', 1.79]
+
+sister.count('s')
+2
+
+sister.upper()
+'LIZ'
+
