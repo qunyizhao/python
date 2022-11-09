@@ -7,6 +7,8 @@ int()
 round()
 max()
 reverse()
+sorted()
+np_2d.shape()
 
 ### Example 1
 sister = 'liz' # This is a string
@@ -39,3 +41,39 @@ sister.count('s')
 sister.upper()
 'LIZ'
 
+### Packages
+pip3 install numpy
+import numpy as np
+
+numpy.array([1,2,3])
+array([1,2,3])
+
+np.array([1,2,3])
+array([1,2,3])
+
+from numpy import array
+
+array([1,2,3])
+array([1,2,3])
+
+import math
+math.pi
+
+bmi[bmi>23]
+
+# Create a numpy array from baseball: np_baseball
+np_baseball = np.array(baseball)
+
+np_2d[0][2]
+1.71
+
+np_ed[0, 2]
+1.71
+
+### Basic Statistics
+np.mean()
+np.median()
+np.corrcoef() # check whether weight and height is correlated or not
+np.std()
+np.sum()
+np.sort()
