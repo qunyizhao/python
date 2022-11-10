@@ -1,0 +1,9 @@
+import pandas as pd
+brics = pd.DataFrame(dict)
+
+### import dataset from csv file
+brics = pd.read_csv(path/to/brics, index_col=0) # set the first column as index
+
+## loc and iloc
+brics.loc[['RU']]
+brics.iloc[[1]]
