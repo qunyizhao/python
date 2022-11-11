@@ -7,3 +7,24 @@ brics = pd.read_csv(path/to/brics, index_col=0) # set the first column as index
 ## loc and iloc
 brics.loc[['RU']]
 brics.iloc[[1]]
+
+## Basic code
+dogs.info()
+dogs.shape #output is number of rows and columns
+dogs.describe() #summary statistics for numerical data
+
+dogs.columns() #contain column names
+dogs.index() #contain row number or row names
+
+## Sorting rows
+df.sort_values("breed")
+df.sort_values(["breed", "weight_kg"])
+
+## Subsetting rows
+dogs[dogs["height_cm"] > 60]
+dogs[dogs["color"] == "tan"]
+dogs[(dogs["height_cm"] > 60) & (dogs["color"] == "tan")]
+
+colors = ["brown", "black", "tan"]
+condition = dogs["color"].isin(colors)
+dogs[condition]
