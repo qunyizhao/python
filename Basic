@@ -41,7 +41,7 @@ sister.count('s')
 sister.upper()
 'LIZ'
 
-### Packages
+### NumPy Packages
 pip3 install numpy
 import numpy as np
 
@@ -69,6 +69,11 @@ np_2d[0][2]
 
 np_ed[0, 2]
 1.71
+
+np.logical_and()
+np.logical_or()
+np.logical_not()
+
 
 ### Basic Statistics
 np.mean()
@@ -101,3 +106,39 @@ print('italy' in europe)
 
 # Remove australia
 del(europe['australia'])
+
+
+### Comparison Operators: >, >=, <, <=, !=
+### Boolean Operators: and, or, not
+### Conditional Statements: if, else, elif
+
+### for loop
+# areas list
+areas = [11.25, 18.0, 20.0, 10.75, 9.50]
+
+# Change for loop to use enumerate() and update print()
+for a,b in enumerate(areas) :
+    print('room '+str(a)+': '+str(b))
+    
+### for loop in Dictionary
+for k, v in my_dict.items()
+
+### for loop in NumPy array
+for i in np.nditer(my_array)
+
+### Iterate over rows of cars
+for x,y in cars.iterrows():
+    print(x)
+    print(y)
+    
+### random generators
+import numpy as np
+np.random.rd()
+np.random.seed(123) # set the 123 seed
+np.random.randint(0,2) # randomly generate 0 or 1
+
+
+
+
+
+
