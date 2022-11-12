@@ -28,3 +28,94 @@ dogs[(dogs["height_cm"] > 60) & (dogs["color"] == "tan")]
 colors = ["brown", "black", "tan"]
 condition = dogs["color"].isin(colors)
 dogs[condition]
+
+
+### Summary Statistics
+sum()
+min()
+max()
+np.mean()
+np.median()
+mode()
+cumsum()
+cummax()
+cummin()
+agg()
+
+df['column'].agg(function)
+
+# Drop duplicate store/department combinations
+store_depts = sales.drop_duplicates(['store','department'])
+print(store_depts.head())
+
+# Subset the rows where is_holiday is True and drop duplicate dates
+holiday_dates = sales[sales['is_holiday']].drop_duplicates(subset='date')
+
+# Get the proportion of departments of each number and sort
+dept_props_sorted = store_depts['department'].value_counts(sort=True, normalize=True)
+print(dept_props_sorted)
+
+### groupby function
+
+# Calc total weekly sales
+sales_all = sales["weekly_sales"].sum()
+
+# Subset for type A stores, calc total weekly sales
+sales_A = sales[sales["type"] == "A"]["weekly_sales"].sum()
+
+
+sales_by_type = sales.groupby("type")["weekly_sales"].sum()
+
+
+### pivot tables
+# Pivot for mean weekly_sales for each store type
+mean_sales_by_type = sales.pivot_table('weekly_sales',index='type')
+
+
+# Pivot for mean and median weekly_sales for each store type
+mean_med_sales_by_type = sales.pivot_table('weekly_sales',index='type',aggfunc=[np.mean,np.median])
+
+# Pivot for mean weekly_sales by store type and holiday 
+mean_sales_by_type_holiday = sales.pivot_table('weekly_sales', index='type',columns='is_holiday')
+
+# Print mean weekly_sales by department and type; fill missing values with 0
+print(sales.pivot_table('weekly_sales', index='department',columns='type',fill_value=0))
+
+
+# Print the mean weekly_sales by department and type; fill missing values with 0s; sum all rows and cols
+print(sales.pivot_table(values="weekly_sales", index="department", columns="type", fill_value=0, margins=True))
+
+
+## 
+set_index()
+reset_index()
+
+# Make a list of cities to subset on
+cities = ["Moscow", "Saint Petersburg"]
+
+# Subset temperatures using square brackets
+print(temperatures[temperatures["city"].isin(cities)])
+
+# Subset temperatures_ind using .loc[]
+print(temperatures_ind.loc[cities])
+
+
+
+### seabon plot
+# Import seaborn with alias sns
+import seaborn as sns
+
+# Import matplotlib.pyplot with alias plt
+import matplotlib.pyplot as plt
+
+# Draw the scatter plot
+sns.scatterplot(x="n_convenience",
+                y="price_twd_msq",
+                data=taiwan_real_estate)
+
+# Draw a trend line on the scatter plot of price_twd_msq vs. n_convenience
+sns.regplot(x="n_convenience",
+         y="price_twd_msq",
+         data=taiwan_real_estate,
+         ci=None,
+         scatter_kws={'alpha': 0.5})
