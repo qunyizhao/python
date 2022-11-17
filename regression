@@ -27,3 +27,19 @@ mean_price_by_age = taiwan_real_estate.groupby("house_age_years")["price_twd_msq
 # Print the result
 print(mean_price_by_age)
  
+
+
+### Get summary.info
+summary_info = a.get_influence().summary_frame()
+
+### logistic regression
+# Import logit
+from statsmodels.formula.api import logit
+
+# Fit a logistic regression of churn vs. length of relationship using the churn dataset
+mdl_churn_vs_relationship = logit("has_churned~time_since_first_purchase",data=churn).fit()
+
+# Print the parameters of the fitted model
+print(mdl_churn_vs_relationship.params)
+
+
